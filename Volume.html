@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Master | Math & Code Interactive Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .math-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .math-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            font-family: 'Fira Code', monospace;
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            color: #e11d48;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+        }
+        svg {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-indigo-600">VolumeMaster.js</h1>
+                <p class="text-sm text-slate-500 font-medium">Mathematics Educator & Full Stack Developer</p>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 font-medium">
+                    <li><a href="#prisms" class="hover:text-indigo-600">Prisms</a></li>
+                    <li><a href="#pyramids" class="hover:text-indigo-600">Pyramids</a></li>
+                    <li><a href="#curved" class="hover:text-indigo-600">Curved Solids</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Intro Section -->
+        <section class="mb-16 bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
+            <h2 class="text-3xl font-bold mb-4">The Developer's Approach to Volume</h2>
+            <p class="text-lg leading-relaxed text-slate-700">
+                In geometry, volume is the 3D space an object occupies. As a developer, I think of volume as a <strong>function</strong>. 
+                Most prisms follow the logic: <code>let volume = areaOfBase * height;</code>. Pyramids simply apply a weight: <code>volume = (1/3) * areaOfBase * height;</code>. 
+                Below, we’ll explore the "algorithms" for 15 different solids with full visual representations.
+            </p>
+        </section>
+
+        <!-- Prisms Section -->
+        <h2 id="prisms" class="text-3xl font-bold mb-8 border-l-4 border-indigo-600 pl-4">1. Prisms (Base × Height)</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+
+            <!-- 1. Triangular Prism -->
+            <div class="math-card bg-white p-6 rounded-2xl border">
+                <h3 class="text-lg font-bold mb-2">Triangular Prism</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M40 90 L100 90 L70 50 Z" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M100 90 L160 70 L130 30 L70 50" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M100 90 L130 30" fill="none" stroke="#4f46e5" stroke-width="2" stroke-dasharray="4"/>
+                    <text x="65" y="105" font-size="10" fill="#64748b">b=6</text>
+                    <text x="35" y="70" font-size="10" fill="#64748b">h=4</text>
+                    <text x="135" y="65" font-size="10" fill="#64748b">L=10</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center">
+                    <p class="text-lg font-mono">V = (½bh)L</p>
+                </div>
+                <p class="text-sm text-slate-600">½(6 × 4) × 10 = 120 units³</p>
+            </div>
+
+            <!-- 2. Square Prism -->
+            <div class="math-card bg-white p-6 rounded-2xl border">
+                <h3 class="text-lg font-bold mb-2">Square Prism (Cube)</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <rect x="50" y="50" width="50" height="50" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M50 50 L80 20 L130 20 L130 70 L100 100" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M100 50 L130 20" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <text x="70" y="115" font-size="10" fill="#64748b">s=5</text>
+                    <text x="135" y="50" font-size="10" fill="#64748b">H=5</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center">
+                    <p class="text-lg font-mono">V = s² × H</p>
+                </div>
+                <p class="text-sm text-slate-600">5² × 5 = 125 units³</p>
+            </div>
+
+            <!-- 3. Rectangular Prism -->
+            <div class="math-card bg-white p-6 rounded-2xl border">
+                <h3 class="text-lg font-bold mb-2">Rectangular Prism</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <rect x="40" y="60" width="80" height="40" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M40 60 L70 30 L150 30 L150 70 L120 100" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M120 60 L150 30" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <text x="75" y="115" font-size="10" fill="#64748b">l=8</text>
+                    <text x="155" y="55" font-size="10" fill="#64748b">h=5</text>
+                    <text x="125" y="85" font-size="10" fill="#64748b">w=3</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center">
+                    <p class="text-lg font-mono">V = l × w × h</p>
+                </div>
+                <p class="text-sm text-slate-600">8 × 3 × 5 = 120 units³</p>
+            </div>
+
+            <!-- 4. Trapezoidal Prism -->
+            <div class="math-card bg-white p-6 rounded-2xl border">
+                <h3 class="text-lg font-bold mb-2">Trapezoidal Prism</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M40 90 L100 90 L90 60 L50 60 Z" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M100 90 L150 70 L140 40 L90 60" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M140 40 L90 40 L50 60" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <text x="65" y="105" font-size="10" fill="#64748b">b=6</text>
+                    <text x="65" y="55" font-size="10" fill="#64748b">a=4</text>
+                    <text x="130" y="85" font-size="10" fill="#64748b">L=10</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center">
+                    <p class="text-lg font-mono">V = [½(a+b)h]L</p>
+                </div>
+                <p class="text-sm text-slate-600">½(4+6)3 × 10 = 150 units³</p>
+            </div>
+
+            <!-- 5. Pentagonal Prism -->
+            <div class="math-card bg-white p-6 rounded-2xl border">
+                <h3 class="text-lg font-bold mb-2">Pentagonal Prism</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M60 100 L100 100 L115 75 L80 60 L45 75 Z" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M115 75 L155 55 L120 40 L80 60" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M155 55 L140 80 L100 100" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <text x="75" y="115" font-size="10" fill="#64748b">s=4</text>
+                    <text x="135" y="75" font-size="10" fill="#64748b">H=10</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center">
+                    <p class="text-lg font-mono">V = BaseArea × H</p>
+                </div>
+                <p class="text-sm text-slate-600">(27.5) × 10 = 275 units³</p>
+            </div>
+
+            <!-- 6. Hexagonal Prism -->
+            <div class="math-card bg-white p-6 rounded-2xl border">
+                <h3 class="text-lg font-bold mb-2">Hexagonal Prism</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M50 90 L80 90 L95 70 L80 50 L50 50 L35 70 Z" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M95 70 L145 50 L130 30 L80 50" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <path d="M145 50 L130 70 L80 90" fill="none" stroke="#4f46e5" stroke-width="2"/>
+                    <text x="60" y="105" font-size="10" fill="#64748b">s=4</text>
+                    <text x="120" y="85" font-size="10" fill="#64748b">H=10</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center">
+                    <p class="text-lg font-mono">V = BaseArea × H</p>
+                </div>
+                <p class="text-sm text-slate-600">≈ 41.57 × 10 = 415.7 units³</p>
+            </div>
+        </div>
+
+        <!-- Pyramids Section -->
+        <h2 id="pyramids" class="text-3xl font-bold mb-8 border-l-4 border-rose-500 pl-4">2. Pyramids (⅓ × Base × Height)</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+
+            <!-- 7. Square Pyramid -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-rose-100">
+                <h3 class="text-lg font-bold mb-2">Square Pyramid</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M50 100 L110 100 L140 80 L80 80 Z" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M50 100 L95 30 L110 100" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M140 80 L95 30 L80 80" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2"/>
+                    <text x="75" y="115" font-size="10" fill="#64748b">s=6</text>
+                    <text x="105" y="60" font-size="10" fill="#64748b">H=10</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center !bg-rose-500">
+                    <p class="text-lg font-mono">V = ⅓s²H</p>
+                </div>
+                <p class="text-sm text-slate-600">⅓(36) × 10 = 120 units³</p>
+            </div>
+
+            <!-- 8. Rectangular Pyramid -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-rose-100">
+                <h3 class="text-lg font-bold mb-2">Rectangular Pyramid</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M40 100 L130 100 L160 80 L70 80 Z" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M40 100 L100 30 L130 100" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M160 80 L100 30" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <text x="80" y="115" font-size="10" fill="#64748b">l=5</text>
+                    <text x="125" y="90" font-size="10" fill="#64748b">w=4</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center !bg-rose-500">
+                    <p class="text-lg font-mono">V = ⅓(lw)H</p>
+                </div>
+                <p class="text-sm text-slate-600">⅓(20) × 9 = 60 units³</p>
+            </div>
+
+            <!-- 9. Triangular Pyramid -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-rose-100">
+                <h3 class="text-lg font-bold mb-2">Triangular Pyramid</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M60 100 L140 100 L100 80 Z" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M60 100 L100 30 L140 100" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M100 80 L100 30" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="2"/>
+                    <text x="95" y="115" font-size="10" fill="#64748b">b=6</text>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center !bg-rose-500">
+                    <p class="text-lg font-mono">V = ⅓(Base)H</p>
+                </div>
+                <p class="text-sm text-slate-600">⅓(12) × 10 = 40 units³</p>
+            </div>
+
+            <!-- 10. Pentagonal Pyramid -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-rose-100">
+                <h3 class="text-lg font-bold mb-2">Pentagonal Pyramid</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M60 100 L100 100 L120 80 L100 65 L60 80 Z" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M60 100 L90 20 L100 100" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M120 80 L90 20" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center !bg-rose-500">
+                    <p class="text-lg font-mono">V = ⅓(BaseArea)H</p>
+                </div>
+                <p class="text-sm text-slate-600">Using Apothem for Base Area</p>
+            </div>
+
+            <!-- 11. Hexagonal Pyramid -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-rose-100">
+                <h3 class="text-lg font-bold mb-2">Hexagonal Pyramid</h3>
+                <svg viewBox="0 0 200 120" class="w-full h-32 mb-4">
+                    <path d="M60 100 L100 100 L120 80 L100 60 L60 60 L40 80 Z" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M60 100 L85 20 L100 100" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                    <path d="M120 80 L85 20" fill="none" stroke="#f43f5e" stroke-width="2"/>
+                </svg>
+                <div class="formula-box p-3 rounded-xl mb-4 text-center !bg-rose-500">
+                    <p class="text-lg font-mono">V = ⅓(BaseArea)H</p>
+                </div>
+                <p class="text-sm text-slate-600">⅓(3√3/2 × s²) × H</p>
+            </div>
+        </div>
+
+        <!-- Curved Solids Section -->
+        <h2 id="curved" class="text-3xl font-bold mb-8 border-l-4 border-emerald-500 pl-4">3. Cylinders & Cones (π Logic)</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+
+            <!-- 12. Cylinder (Radius) -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-emerald-100">
+                <h3 class="text-lg font-bold mb-2">Cylinder (r)</h3>
+                <svg viewBox="0 0 100 120" class="w-full h-32 mb-4">
+                    <ellipse cx="50" cy="20" rx="30" ry="10" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <path d="M20 20 L20 100 A30 10 0 0 0 80 100 L80 20" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <path d="M20 100 A30 10 0 0 1 80 100" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="3"/>
+                    <line x1="50" y1="20" x2="80" y2="20" stroke="#10b981" stroke-width="1"/>
+                    <text x="60" y="18" font-size="8" fill="#64748b">r=3</text>
+                </svg>
+                <div class="formula-box p-2 rounded-xl mb-4 text-center !bg-emerald-600">
+                    <p class="text-lg font-mono">V = πr²h</p>
+                </div>
+                <p class="text-xs text-slate-600">π(3²)10 ≈ 282.7</p>
+            </div>
+
+            <!-- 13. Cylinder (Diameter) -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-emerald-100">
+                <h3 class="text-lg font-bold mb-2">Cylinder (d)</h3>
+                <svg viewBox="0 0 100 120" class="w-full h-32 mb-4">
+                    <ellipse cx="50" cy="20" rx="30" ry="10" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <path d="M20 20 L20 100 A30 10 0 0 0 80 100 L80 20" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <line x1="20" y1="20" x2="80" y2="20" stroke="#10b981" stroke-width="1" stroke-dasharray="2"/>
+                    <text x="45" y="18" font-size="8" fill="#64748b">d=10</text>
+                </svg>
+                <div class="formula-box p-2 rounded-xl mb-4 text-center !bg-emerald-600">
+                    <p class="text-lg font-mono">r = d/2</p>
+                </div>
+                <p class="text-xs text-slate-600">π(5²)5 ≈ 392.7</p>
+            </div>
+
+            <!-- 14. Cone (Radius) -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-emerald-100">
+                <h3 class="text-lg font-bold mb-2">Cone (r)</h3>
+                <svg viewBox="0 0 100 120" class="w-full h-32 mb-4">
+                    <ellipse cx="50" cy="100" rx="30" ry="10" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <path d="M20 100 L50 20 L80 100" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <line x1="50" y1="100" x2="80" y2="100" stroke="#10b981" stroke-width="1"/>
+                    <text x="60" y="112" font-size="8" fill="#64748b">r=3</text>
+                </svg>
+                <div class="formula-box p-2 rounded-xl mb-4 text-center !bg-emerald-600">
+                    <p class="text-lg font-mono">V = ⅓πr²h</p>
+                </div>
+                <p class="text-xs text-slate-600">⅓π(3²)4 ≈ 37.7</p>
+            </div>
+
+            <!-- 15. Cone (Diameter) -->
+            <div class="math-card bg-white p-6 rounded-2xl border border-emerald-100">
+                <h3 class="text-lg font-bold mb-2">Cone (d)</h3>
+                <svg viewBox="0 0 100 120" class="w-full h-32 mb-4">
+                    <ellipse cx="50" cy="100" rx="30" ry="10" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <path d="M20 100 L50 20 L80 100" fill="none" stroke="#10b981" stroke-width="2"/>
+                    <line x1="20" y1="100" x2="80" y2="100" stroke="#10b981" stroke-width="1" stroke-dasharray="2"/>
+                    <text x="45" y="112" font-size="8" fill="#64748b">d=6</text>
+                </svg>
+                <div class="formula-box p-2 rounded-xl mb-4 text-center !bg-emerald-600">
+                    <p class="text-lg font-mono">V = ⅓π(d/2)²h</p>
+                </div>
+                <p class="text-xs text-slate-600">Same logic as radius.</p>
+            </div>
+        </div>
+
+        <!-- Developer Corner -->
+        <section class="bg-slate-900 text-white p-8 rounded-3xl">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="mr-2">💻</span> Developer Corner: Coding the Logic
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-400">The JavaScript Logic</h3>
+                    <p class="text-slate-400 text-sm mb-4">We treat each formula as a pure function. This ensures our app is testable and accurate.</p>
+                    <pre class="bg-slate-800 p-4 rounded-lg text-xs overflow-x-auto">
+<code>// JavaScript Implementation
+const calculateVolume = {
+  triangularPrism: (b, ht, L) => (0.5 * b * ht) * L,
+  cylinder: (r, h) => Math.PI * Math.pow(r, 2) * h,
+  cone: (r, h) => (1/3) * Math.PI * Math.pow(r, 2) * h,
+  sphere: (r) => (4/3) * Math.PI * Math.pow(r, 3)
+};
+
+// UI Example: Input listener
+function handleCalc() {
+  const r = document.getElementById('radius').value;
+  const h = document.getElementById('height').value;
+  const result = calculateVolume.cylinder(r, h);
+  updateUI(result.toFixed(2));
+}</code></pre>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-400">Interactive Quiz Engine</h3>
+                    <div id="quiz-container" class="bg-slate-800 p-6 rounded-xl">
+                        <p id="question" class="mb-4 text-slate-300">Loading question...</p>
+                        <input type="number" id="user-answer" placeholder="Your answer" class="w-full bg-slate-700 border-none rounded p-2 mb-4 text-white placeholder-slate-500">
+                        <button onclick="checkAnswer()" class="w-full bg-indigo-600 hover:bg-indigo-500 py-2 rounded font-bold transition">Check Answer</button>
+                        <p id="feedback" class="mt-4 text-sm font-medium h-6"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-12 text-slate-500 border-t bg-white mt-12">
+        <p>© 2025 VolumeMaster.js | Built with Geometry and JavaScript</p>
+    </footer>
+
+    <script>
+        // Quiz State
+        let currentQuestion = {
+            ans: 0,
+            solid: ""
+        };
+
+        function generateQuestion() {
+            const types = ['cylinder', 'prism', 'cube'];
+            const type = types[Math.floor(Math.random() * types.length)];
+            let qText = "";
+            let ans = 0;
+
+            if(type === 'cylinder') {
+                const r = Math.floor(Math.random() * 5) + 1;
+                const h = 10;
+                ans = Math.round(Math.PI * r * r * h);
+                qText = `What is the volume of a Cylinder with radius r=${r} and height h=${h}? (Round to nearest whole number, use π ≈ 3.14)`;
+            } else if (type === 'cube') {
+                const s = Math.floor(Math.random() * 6) + 2;
+                ans = s * s * s;
+                qText = `Find the volume of a Square Prism (Cube) where side s=${s}.`;
+            } else {
+                const l = 5, w = 4, h = 2;
+                ans = l * w * h;
+                qText = `A Rectangular Prism has l=5, w=4, and h=2. What is its volume?`;
+            }
+
+            currentQuestion.ans = ans;
+            document.getElementById('question').innerText = qText;
+            document.getElementById('feedback').innerText = "";
+            document.getElementById('user-answer').value = "";
+        }
+
+        function checkAnswer() {
+            const valStr = document.getElementById('user-answer').value;
+            if(!valStr) return;
+            
+            const userVal = parseInt(valStr);
+            const feedback = document.getElementById('feedback');
+            
+            if (userVal === currentQuestion.ans) {
+                feedback.innerHTML = "✅ Correct! Great job, mathematician.";
+                feedback.className = "mt-4 text-sm font-medium text-emerald-400";
+                setTimeout(generateQuestion, 2000);
+            } else {
+                feedback.innerHTML = `❌ Not quite. Hint: The answer is ${currentQuestion.ans}. Try checking your formula!`;
+                feedback.className = "mt-4 text-sm font-medium text-rose-400";
+            }
+        }
+
+        window.onload = generateQuestion;
+    </script>
+</body>
+</html>
